@@ -17,7 +17,7 @@ Install deps
 
 `npm install`
 
-Register a new application using (Discord developer portal)[https://discord.com/developers/applications].
+Register a new application using [Discord developer portal](https://discord.com/developers/applications).
 Note the Application ID, we will need this later. Move to the `Bot` page, toggle the 
 'Message Content Intent' checkbox. Click 'Reset Token' button, save the token provided 
 into the `key.txt` in the bot's root dir. 
