@@ -30,9 +30,7 @@ for( let filepath of api_key_locations ){
 			api_key = fs.readFileSync( filepath, 'utf8').trim();
 		}				
 
-	} catch( err ){
-		// console.log( `${filepath} does not exist or unreadable ${err}` );
-	}
+	} catch( err ){}
 }
 
 if( !api_key ){
@@ -77,7 +75,8 @@ bot.on('messageCreate', async (msg) => {
 	}
 
 	// Update the latest channel access timstamp
-	channel_settings[msg.channel.id].updated = now;
+	if( channel_settings[msg.channel.id] )
+		channel_settings[msg.channel.id].updated = now;
 
 	// Init the request and its state
 	let reciever = msg.member.nick ? msg.member.nick : msg.member.user.username;
