@@ -152,6 +152,10 @@ bot.on('messageCreate', async (msg) => {
 
 		try{
 
+			if( rolls.repeat > 50 )
+				throw "Too many repeats";
+
+
 			result = evaluator.evaluate( rolls );
 
 			if( state.sort_result ){
