@@ -199,12 +199,16 @@ bot.on('messageCreate', async (msg) => {
 
 	}
 
-	response = mods.pre_output(
-		response,
-		locale,
-		state,
-		result,
-	);
+	if( ! response.hasMessage( 'ERROR') ){
+
+		response = mods.pre_output(
+			response,
+			locale,
+			state,
+			result,
+		);
+		
+	}
 
 	try {
 
